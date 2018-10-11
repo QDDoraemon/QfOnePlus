@@ -1,0 +1,60 @@
+html,
+body,
+div,
+ul,
+ol,
+li,
+p,
+dl,
+dt,
+dd,
+input,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+fieldset,
+legend,
+img,
+table,
+tr,
+th,
+td,
+thead,
+tbody,
+tfoot,
+span {
+  margin: 0;
+  padding: 0; }
+
+img {
+  display: block;
+  border: 0; }
+
+ul,
+ol,
+li {
+  list-style: none; }
+
+a,
+u,
+html {
+  text-decoration: none;
+  color: #000; }
+
+b,
+strong,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal; }
+
+i,
+em {
+  font-style: normal; }
