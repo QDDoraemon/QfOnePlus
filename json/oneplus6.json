@@ -1,0 +1,99 @@
+[
+    [{
+        "title": "琥珀红 8GB+128GB",
+        "url": "images/oneplus6/fc1f8f90825656bb616914003dbb1a24_840_840.png",
+        "small": "images/oneplus6/fc1f8f90825656bb616914003dbb1a24_70_70.png",
+        "price": "￥3599.00",
+        "huabei": ["￥1227.26 起 X 3 期", "￥626.83 起 X 6 期", "￥322.41 起 X 12 期"],
+        "baitiao": ["￥1217.66 起 X 3 期", "￥617.82 起 X 6 期", "￥317.92 起 X 12 期"]
+    }, {
+        "title": "亮瓷黑 6GB+64GB",
+        "url": "images/oneplus6/c6820406c886c46d53d36d1c974c62ec_840_840.png",
+        "small": "images/oneplus6/c6820406c886c46d53d36d1c974c62ec_70_70.png",
+        "price": "￥3199.00",
+        "huabei": ["￥1090.86 起 X 3 期", "￥557.16 起 X 6 期", "￥3286.58 起 X 12 期"],
+        "baitiao": ["￥1082.32 起 X 3 期", "￥549.16 起 X 6 期", "￥282.58 起 X 12 期"]
+    }, {
+        "title": "亮瓷黑 8GB+128GB",
+        "url": "images/oneplus6/c6820406c886c46d53d36d1c974c62ec_840_840.png",
+        "small": "images/oneplus6/c6820406c886c46d53d36d1c974c62ec_70_70.png",
+        "price": "￥3599.00",
+        "huabei": ["￥1227.26 起 X 3 期", "￥626.83 起 X 6 期", "￥322.41 起 X 12 期"],
+        "baitiao": ["￥1217.66 起 X 3 期", "￥617.82 起 X 6 期", "￥317.92 起 X 12 期"]
+    }, {
+        "title": "墨岩黑 8GB+128GB",
+        "url": "images/oneplus6/406472f9c1dcd5d5ecc6706b99a29c1b_840_840.png",
+        "small": "images/oneplus6/406472f9c1dcd5d5ecc6706b99a29c1b_70_70.png",
+        "price": "￥3599.00",
+        "huabei": ["￥1227.26 起 X 3 期", "￥626.83 起 X 6 期", "￥322.41 起 X 12 期"],
+        "baitiao": ["￥1217.66 起 X 3 期", "￥617.82 起 X 6 期", "￥317.92 起 X 12 期"]
+    }, {
+        "title": "墨岩黑 8GB+256GB",
+        "url": "images/oneplus6/406472f9c1dcd5d5ecc6706b99a29c1b_840_840.png",
+        "small": "images/oneplus6/406472f9c1dcd5d5ecc6706b99a29c1b_70_70.png",
+        "price": "￥3999.00",
+        "huabei": ["￥1363.66 起 X 3 期", "￥696.49 起 X 6 期", "￥358.24 起 X 12 期"],
+        "baitiao": ["￥1353.00 起 X 3 期", "￥686.50 起 X 6 期", "￥353.24 起 X 12 期"]
+    }, {
+        "title": "月牙白 8GB+128GB",
+        "url": "images/oneplus6/9d19eb0235561b3e8c3479e01897db13_840_840.png",
+        "small": "images/oneplus6/9d19eb0235561b3e8c3479e01897db13_70_70.png",
+        "price": "￥3599.00",
+        "huabei": ["￥1227.26 起 X 3 期", "￥626.83 起 X 6 期", "￥322.41 起 X 12 期"],
+        "baitiao": ["￥1217.66 起 X 3 期", "￥617.82 起 X 6 期", "￥317.92 起 X 12 期"]
+    }],
+    [{
+        "title": ["OnePlus6 3D钢化玻璃保护壳（黑色）"],
+        "price": ["￥129.00"],
+        "priceNow": ["￥119.00"],
+        "url": ["images/oneplus6/842f3dc1bfdad71f05cd8ed5e4706cf2_320_320.png"],
+        "discount": "9.2折"
+    }, {
+        "title": ["一加银耳2耳机（曜岩黑）"],
+        "price": ["￥119.00"],
+        "priceNow": ["￥99.00"],
+        "url": ["images/oneplus6/8e8ef1ed2166deb5e5a4a7c5662172ed_320_320.png"],
+        "discount": "8.3折",
+        "color": ["images/oneplus6/ff3abcda00fca67198a070b60a0bf444.jpg"]
+    }, {
+        "title": ["Oneplus6芳纶纤维全包保护壳", "OnePlus6黑檀全包保护壳", "OnePlus6尼龙全包保护壳（黑色）"],
+        "price": ["￥199.00", "￥199.00", "￥149.00"],
+        "priceNow": ["￥179.00", "￥179.00", "￥129.00"],
+        "url": ["images/oneplus6/e03cee8fb2cfe952a028f24c07c5e21a_320_320.png", "images/oneplus6/b3b42ea362063ed6a99959e4c20f9ddc_320_320.png", "images/oneplus6/423e792f0a1e2f87df3886bb9008e016_320_320.png"],
+        "discount": "9.0折",
+        "color": ["images/oneplus6/7e049379354ce82322c8e012b205201b.jpg", "images/oneplus6/3f39af5fbdad2ada30faece1cb0c21ee.jpg", "images/oneplus6/ff3abcda00fca67198a070b60a0bf444.jpg"]
+    }, {
+        "title": ["一加旅行双肩包（太空黑）", "一加旅行双肩包（莫兰迪灰）"],
+        "priceNow": ["￥399.00"],
+        "url": ["images/oneplus6/aacc5822ff29213772c6a031a5db71c7_320_320.png", "images/oneplus6/6e9d4458ee0f0f86c9e5dcfd2d577ee1_320_320.png"],
+        "color": ["images/oneplus6/ff3abcda00fca67198a070b60a0bf444.jpg", "images/oneplus6/e86354ac5eef16f01e63ffc2d91ca347.jpg"]
+    }, {
+        "p": "配件清单",
+        "arrow": "images/oneplus6/589f628ec35e8e3375a1da1fcbcf2e99.png",
+        "span": ["配件清单", "OnePlus 6 砂岩黑保护壳", "OnePlus 6 3D钢化膜玻璃保护膜（黑色）"],
+        "title": ["OnePlus6保护套装（砂岩黑）"],
+        "price": ["￥228.00"],
+        "priceNow": ["￥199.00"],
+        "url": ["images/oneplus6/c19d8660573e378b13b04617c633106b_320_320.png"],
+        "discount": "8.7折"
+    }, {
+        "p": "配件清单",
+        "arrow": "images/oneplus6/589f628ec35e8e3375a1da1fcbcf2e99.png",
+        "span": ["配件清单", "OnePlus 6 3D钢化玻璃保护膜（黑色）", "OnePlus 6 芳纶纤维保护壳"],
+        "title": ["OnePlus6保护套装（芳纶纤维）"],
+        "price": ["￥278.00"],
+        "priceNow": ["￥249.00"],
+        "url": ["images/oneplus6/0243d7cf32871a135684924feb0ca670_320_320.png"],
+        "discount": "9.0折"
+    }],
+    [{
+        "title": "OnePlus 6",
+        "url": "images/oneplus6/fc1f8f90825656bb616914003dbb1a24_840_840.png"
+    }, {
+        "title": "DASH闪充Type-C数据线",
+        "url": "images/oneplus6/b7f85eb7bc0c9c3ca813f9a39ae7a399.png"
+    }, {
+        "title": "DASH闪充适配器",
+        "url": "images/oneplus6/478925bfe8098c4d7e01192cf7747a6f_320_320.png"
+    }]
+]
