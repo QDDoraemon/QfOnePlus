@@ -88,9 +88,15 @@ define(["parabola", "jquery", "jquery-cookie"], function (parabola, $) {
                     $(".left a").eq(0).find("img").attr("src", res[0][0].url);
                     $(".left a").eq(1).find("img").attr("src", res[0][0].small);
                     $(".color li").eq(0).attr("class", "selected");
+                    $(".hide-div span:nth-child(2)").html(res[0][0].title);
+                    $(".hide-div span:nth-child(3)").html(res[0][0].price);
+                    $(".buy-right >span").html(res[0][0].price);
                     $(".color li").click(function () {
                         $(".left a").eq(0).find("img").attr("src", res[0][$(this).index() - 2].url);
                         $(".left a").eq(1).find("img").attr("src", res[0][$(this).index() - 2].small);
+                        $(".hide-div span:nth-child(2)").html(res[0][$(this).index() - 2].title);
+                        $(".hide-div span:nth-child(3)").html(res[0][$(this).index() - 2].price);
+                        $(".buy-right >span").html(res[0][$(this).index() - 2].price);
                         $(".color h4").html(res[0][$(this).index() - 2].price);
                         $(".color li").attr('class', '').eq($(this).index() - 2).attr("class", "selected");
                         if ($(".pay p a").eq(0).attr("class") == 'checked') {

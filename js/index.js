@@ -59,43 +59,85 @@ define(["parabola", "jquery", "jquery-cookie"], function (parabola, $) {
                 url: "json/index.json",
                 type: "GET",
                 success: function (res) {
-                    $("#banner").css("background", `url(${res[0][0].url})`);
-                    var oBtns = $("#banner").find("ol").find("li");
-                    var Olis = $("#banner").find("ul").find("li");
-                    var timer = null;
-                    var Olis = $("#banner").find("ul").find("li");
-                    var iNow = 0;
-                    oBtns.click(function () {
-                        iNow = $(this).index();
-                        // tab();
+                    var html = '';
+                    for (var i = 0; i < res[0].length; i++) {
+                        html += `
+                        <li>
+                        <div class = 'text'>
+                        <p>${res[0][i].text[0]}</p>
+                        <p>${res[0][i].text[1]}</p>
+                        <a href="">${res[0][i].text[2]}</a>
+                        <p>${res[0][i].text[3]}</p>
+                        </div>
+                        <a href=""><img src="${res[0][i].url}" alt="${res[0][i].title}"/></a>
+                        </li>`;
+                    }
+
+                    $("#banner ul").html(html);
+
+                    $("#banner ul li:nth-child(1) .text").css({
+                        right: "20%",
+                        top: "20%"
                     })
-                    timer = setInterval(function () {
-                        $("#banner").css("background", `url(${res[0][iNow].url})`)
-                            .stop().animate({
-                                opacity: 1
-                            }, 800, "linear", function () {
-                                if (iNow == 2) {
-                                    iNow = 0;
-                                }
-                                $("#banner").css("background", `url(${res[0][iNow+1].url})`)
-                                    .stop().animate({
-                                        opacity: 0
-                                    }, 800, "linear");
-                                iNow++;
-                            });
+                    $("#banner ul li:nth-child(2) .text").css({
+                        left: "15%",
+                        top: "20%"
+                    })
+                    $("#banner ul li:nth-child(3) .text").css({
+                        right: "20%",
+                        top: "20%"
+                    })
 
-                    }, 3000);
+                    var index = 0;
+                    var timer = null;
 
+                    function autoPlay() {
+                        timer = setInterval(function () {
+                            document.title = index;
+                            index++;
+                            if (index > 2) {
+                                index = 0
+                            } else if (index < 0) {
+                                index = 2;
+                            };
+                            $("#banner ul li").eq(index).fadeIn(1000).siblings().fadeOut(1000);
+                        }, 3000);
+                    }
 
+                    autoPlay();
+
+                    $("#prev").click(function () {
+                        clearInterval(timer);
+                        index--;
+                        if (index > 2) {
+                            index = 0
+                        } else if (index < 0) {
+                            index = 2;
+                        };
+                        $("#banner ul li").eq(index).fadeIn(1000).siblings().fadeOut(1000);
+                    })
+                    $("#next").click(function () {
+                        clearInterval(timer);
+                        index++;
+                        if (index > 2) {
+                            index = 0
+                        } else if (index < 0) {
+                            index = 2;
+                        };
+                        $("#banner ul li").eq(index).fadeIn(1000).siblings().fadeOut(1000);
+                    })
+
+                    $("#banner ul li").hover(function () {
+                            clearInterval(timer);
+                        },
+                        function () {
+                            autoPlay();
+                        })
                 },
                 error: function (msg) {
                     alert(msg);
                 }
             })
-
-
-
-
             /* --------------------------------------*/
             /* cont1动态加载 */
             $.ajax({
@@ -177,24 +219,6 @@ define(["parabola", "jquery", "jquery-cookie"], function (parabola, $) {
             }).mouseleave(function () {
                 $(".pic").find("img").css("display", "none");
             })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         })
     }
     return {

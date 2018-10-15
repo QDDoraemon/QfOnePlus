@@ -2,18 +2,15 @@
     [{
         "title": "一加云耳",
         "url": "images/077c2db86ebae5a34699de4eff9f4f95.jpg",
-        "width": 1261,
-        "height": 633
+        "text":["一加云耳","Free Your Music","立即预约","￥399"]
     }, {
         "title": "一加6T发布会",
         "url": "images/4cb3486e8d48c78737b5f248a9873eac.jpg",
-        "width": 1261,
-        "height": 633
+        "text":["OnePlus 6T 新品发布会","Unlock The Speed","立即参与","11月5日 14:00 深圳大运中心体育馆"]
     }, {
         "title": "一加6",
         "url": "images/31cdecff25e1ae5d9af388070f18926c.jpg",
-        "width": 1261,
-        "height": 633
+        "text":["OnePlus 6","全速旗舰","立即购买","了解更多"]
     }],
     [{
         "title": "以旧换新",

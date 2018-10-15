@@ -419,11 +419,11 @@ em {
         margin-top: 30px;
         height: 24px; }
         .cont1_box .cont1 .right .pay-method svg {
-          font-size: 12px; }
+          width: 20px;
+          height: 20px; }
         .cont1_box .cont1 .right .pay-method i {
-          font-size: 14px;
+          font-size: 16px;
           display: inline-block;
-          height: 14px;
           padding: 10px 5px;
           margin-right: 10px; }
 
@@ -434,16 +434,68 @@ em {
   border-top: 1px solid gray;
   position: fixed;
   bottom: 0;
-  background: #fff; }
+  background: #fff;
+  z-index: 20; }
   .cont2_box .cont2 {
     height: 60px;
     width: 1160px;
     margin: 0 auto; }
-    .cont2_box .cont2 > div {
+    .cont2_box .cont2 .icon-fixed {
       font-size: 14px;
       display: inline-block;
       line-height: 60px;
-      margin-left: 150px; }
+      margin-left: 100px;
+      float: left; }
+      .cont2_box .cont2 .icon-fixed svg {
+        width: 20px;
+        height: 20px; }
+      .cont2_box .cont2 .icon-fixed i {
+        font-size: 14px;
+        margin-right: 10px; }
+    .cont2_box .cont2 .buy-right {
+      float: left;
+      line-height: 60px;
+      margin-left: 100px; }
+      .cont2_box .cont2 .buy-right .goods-details {
+        position: relative;
+        display: inline-block; }
+        .cont2_box .cont2 .buy-right .goods-details:hover .hide-div {
+          display: block; }
+        .cont2_box .cont2 .buy-right .goods-details svg {
+          width: 25px;
+          height: 25px; }
+        .cont2_box .cont2 .buy-right .goods-details .hide-div {
+          position: absolute;
+          top: -155px;
+          left: -100px;
+          display: none;
+          width: 388px;
+          height: 60px;
+          padding: 45px;
+          background: #fff;
+          box-shadow: 0 0 10px 0 #cccbcb; }
+          .cont2_box .cont2 .buy-right .goods-details .hide-div span {
+            margin-left: 10px;
+            color: gray;
+            font-size: 18px; }
+          .cont2_box .cont2 .buy-right .goods-details .hide-div span:nth-child(1) {
+            font-weight: 900; }
+          .cont2_box .cont2 .buy-right .goods-details .hide-div span:nth-child(3) {
+            margin-left: 50px; }
+      .cont2_box .cont2 .buy-right > span {
+        margin-left: 50px;
+        font-size: 20px; }
+      .cont2_box .cont2 .buy-right a {
+        margin-left: 30px;
+        display: inline-block;
+        background: #eb0028;
+        color: #fff;
+        width: 118px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px; }
+        .cont2_box .cont2 .buy-right a:hover {
+          background: #d70226; }
 
 /* footer1 */
 .footer1_box {
