@@ -14,6 +14,7 @@ define(["parabola", "jquery", "jquery-cookie"], function (parabola, $) {
             })
             $("#order").mouseenter(function () {
                 $("#order-info").css("display", 'block');
+                car_msg()
             }).mouseleave(function () {
                 $("#order-info").css("display", 'none');
             })
@@ -65,6 +66,7 @@ define(["parabola", "jquery", "jquery-cookie"], function (parabola, $) {
                     })
                 }
             })
+
             /*  动态加载cont1 */
             $.ajax({
                 url: "json/oneplus6.json",
@@ -91,13 +93,20 @@ define(["parabola", "jquery", "jquery-cookie"], function (parabola, $) {
                     $(".hide-div span:nth-child(2)").html(res[0][0].title);
                     $(".hide-div span:nth-child(3)").html(res[0][0].price);
                     $(".buy-right >span").html(res[0][0].price);
+                    $(".large").css("background", `url(${res[0][0].url})`);
+                    $(".buyNow").attr('id', `${res[0][0].id}`)
+
                     $(".color li").click(function () {
+
+                        $(".buyNow").attr('id', `${res[0][$(this).index() - 2].id}`);
+                        $(".large").css("background", `url(${res[0][$(this).index() - 2].url})`);
                         $(".left a").eq(0).find("img").attr("src", res[0][$(this).index() - 2].url);
                         $(".left a").eq(1).find("img").attr("src", res[0][$(this).index() - 2].small);
                         $(".hide-div span:nth-child(2)").html(res[0][$(this).index() - 2].title);
                         $(".hide-div span:nth-child(3)").html(res[0][$(this).index() - 2].price);
                         $(".buy-right >span").html(res[0][$(this).index() - 2].price);
                         $(".color h4").html(res[0][$(this).index() - 2].price);
+
                         $(".color li").attr('class', '').eq($(this).index() - 2).attr("class", "selected");
                         if ($(".pay p a").eq(0).attr("class") == 'checked') {
                             var tmp = '';
@@ -172,10 +181,37 @@ define(["parabola", "jquery", "jquery-cookie"], function (parabola, $) {
             }, function () {
                 $(this).parent().find("h4").hide();
             })
+            /* 放大镜 */
 
+            $(".left a:nth-of-type(1)").mousemove(function (ev) {
 
+                $(".large").show(); //显示蓝色小方块
+                $(".move").show(); //显示右方放大图
 
+                var oLeft = ev.pageX - $(".move").width() / 2 - $(this).offset().left; //小方块left属性 
+                var oTop = ev.pageY - $(".move").height() / 2 - $(this).offset().top; //小方块top属性 			
+                var max = $(this).width() - $(".move").width(); //小方块最大移动距离
+                //防止小方块越界
+                if (oLeft < 0)
+                    oLeft = 0;
+                if (oLeft > max)
+                    oLeft = max;
+                if (oTop < 0)
+                    oTop = 0;
+                if (oTop > max)
+                    oTop = max;
 
+                //移动小方块
+                $(".move").css({
+                    "left": oLeft,
+                    "top": oTop
+                })
+                //移动放大图，5倍放大比例
+                $(".large").css("backgroundPosition", `${-1.5*oLeft}px ${-1.5*oTop}px`);
+            }).mouseleave(function () {
+                $(".large").hide();
+                $(".move").hide();
+            })
 
             /* footer2进度条 */
             $(".online").mouseenter(function () {
@@ -195,6 +231,79 @@ define(["parabola", "jquery", "jquery-cookie"], function (parabola, $) {
             }).mouseleave(function () {
                 $(".pic").find("img").css("display", "none");
             })
+            /* cookie */
+            $(".buyNow").click(function () {
+                var id = $(this).attr('id');
+                var first = $.cookie('goods') == null ? true : false;
+                if (first) {
+                    $.cookie('goods', `[{id:${id},num:1}]`, {
+                        expires: 7,
+                        raw: true
+                    });
+                } else {
+                    var str = $.cookie('goods');
+                    var arr = eval(str);
+                    var same = false;
+                    for (var i = 0; i < arr.length; i++) {
+                        if (arr[i].id == id) {
+                            arr[i].num++;
+                            var cookieStr = JSON.stringify(arr);
+                            $.cookie('goods', cookieStr, {
+                                expires: 7,
+                                raw: true
+                            });
+                            same = true;
+                            break;
+                        }
+                    }
+                    if (!same) {
+                        var obj = {
+                            id: id,
+                            num: 1
+                        };
+                        arr.push(obj);
+                        var cookieStr = JSON.stringify(arr);
+                        $.cookie('goods', cookieStr, {
+                            expires: 7,
+                            raw: true
+                        });
+                    }
+                }
+            })
+            /* 添加购物车 */
+            function car_msg() {
+                $.ajax({
+                    url: 'json/oneplus6.json',
+                    type: 'GET',
+                    success: function (res) {
+                        if ($.cookie('goods')) {
+                            $("#order-info p").remove();
+                            var cookie_arr = eval($.cookie('goods'));
+                            // alert(res[0][cookie_arr[1].id].small);
+                            var html = '';
+                            for (var i = 0; i < cookie_arr.length; i++) {
+                                html += `<li>
+                            <img src="${res[0][cookie_arr[i].id].small}" alt="">
+                            <div>
+                                <span>${res[0][cookie_arr[i].id].title}</span>
+                                <p>
+                                    <span>${res[0][cookie_arr[i].id].price}</span>
+                                    <span> X ${cookie_arr[i].num}</span>
+                                </p>
+                            </div>
+                        </li>`;
+                                $("#order-info ul").html(html);
+                            }
+                        }
+                    },
+                    error: function (msg) {
+                        alert(msg);
+                    }
+                })
+            }
+
+
+
         })
     }
     return {

@@ -157,7 +157,7 @@ em {
   display: block;
   border-bottom: 1px solid #a8a7a7; }
 
-#login {
+#login-top {
   display: inline-block !important;
   color: #0690c7 !important;
   border: 0 !important;
@@ -207,11 +207,26 @@ em {
   height: 567px;
   background: #f8f8f8; }
   .cont_box .cont {
+    position: relative;
     height: 417px;
     width: 310px;
     margin: 0 auto;
     padding: 50px 20px 100px 20px;
     text-align: center; }
+    .cont_box .cont .success {
+      width: 300px;
+      height: 200px;
+      background: #000;
+      opacity: 0.9;
+      color: #fff;
+      font-weight: 900;
+      font-size: 40px;
+      text-align: center;
+      line-height: 200px;
+      position: absolute;
+      top: 15%;
+      left: 25px;
+      display: none; }
     .cont_box .cont h5 {
       font-size: 24px;
       padding-bottom: 30px; }

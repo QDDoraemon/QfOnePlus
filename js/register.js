@@ -47,9 +47,11 @@ define(["parabola", "jquery", "jquery-cookie"], function (parabola, $) {
                         width: $("form .slide span").position().left
                     })
                     if ($("form .slide span").position().left >= 265 || $("form .slide span").position().left <= 0) {
+                        $("form .slide span").css("left", "265");
                         $(document).off('mousemove');
                     }
                 })
+
                 $(document).mouseup(function () {
                     $(this).off();
                     if ($("form .slide span").position().left > 265) {
@@ -78,6 +80,56 @@ define(["parabola", "jquery", "jquery-cookie"], function (parabola, $) {
                     opacity: 0
                 }, "linear");
             });
+            /* 表单验证 */
+            $("#phone").blur(function () {
+                var oValue = $(this).val();
+                if (oValue.length == 0) {
+                    $('#phoneSpan').html("请输入手机号");
+                    $(this).css("border", "1px solid red");
+                } else if (!(oValue.length == 11)) {
+                    $("#phoneSpan").html("长度应为十一位数字");
+                    $(this).css("border", "1px solid red");
+                } else {
+                    if (/^[1-3]{1}\d{10}$/.test(oValue)) {
+                        $(this).css("border", "1px solid #000");
+                        $('#phoneSpan').html("输入正确✔").css("color", "green");
+                    }
+                }
+            })
+            $("#password").blur(function () {
+                var oValue = $(this).val();
+                if (oValue.length == 0) {
+                    $('#pwdSpan').html("请输入密码").css({
+                        display: 'block',
+                        color: 'red'
+                    });
+                    $(".text p").css('color', 'gray');
+                    $(this).css("border", "1px solid red");
+                } else if (/^\w{6,16}$/.test(oValue)) {
+                    $(".text p").css("color", "green");
+                    $('#pwdSpan').css({
+                        display: 'none'
+                    });
+                    $(this).css("border", "1px solid #000");
+                } else if (oValue.length >= 6 && oValue.length <= 16) {
+                    $(".text p:first-child()").css('color', 'green');
+                    $(this).css("border", "1px solid red");
+                    $('#pwdSpan').css({
+                        display: 'none'
+                    });
+                } else if (/\w+/.test(oValue)) {
+                    $(".text p:last-child()").css('color', 'green');
+                    $(this).css("border", "1px solid red");
+                    $('#pwdSpan').css({
+                        display: 'none'
+                    });
+                } else {
+                    $(".text p").css('color', 'gray');
+                    $(this).css("border", "1px solid red");
+                }
+            })
+
+
             /* footer2进度条 */
             $(".online").mouseenter(function () {
                 $(this).css("color", "#fff");

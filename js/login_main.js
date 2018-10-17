@@ -10,7 +10,8 @@ require.config({
 
 		//抛物线函数，不遵从AMD
 		"parabola": "parabola",
-		"login": "login"
+		"login": "login",
+		"database": "database"
 	},
 	//设置模块之间的依赖关系
 	shim: {
@@ -25,6 +26,7 @@ require.config({
 })
 
 
-require(['login'], function(login){
+require(['login', 'database'], function (login, database) {
 	login.main();
+	database.main();
 })

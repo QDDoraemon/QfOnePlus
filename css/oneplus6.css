@@ -176,6 +176,31 @@ em {
   border-top: 1px solid #999;
   z-index: 10;
   box-shadow: 0 4px 5px 5px rgba(0, 0, 0, 0.15); }
+  #order-info ul {
+    width: 280px;
+    padding: 20px 20px 40px 20px; }
+    #order-info ul li {
+      height: 100px;
+      border-bottom: 1px solid gray;
+      margin-bottom: 15px; }
+      #order-info ul li img {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        background: #eee;
+        border: 1px solid gray;
+        float: left; }
+      #order-info ul li div {
+        float: right;
+        color: gray;
+        text-align: left;
+        padding-right: 30px;
+        font-size: 14px; }
+        #order-info ul li div p {
+          margin: 30px 0 0 0;
+          padding: 0; }
+          #order-info ul li div p span {
+            margin-right: 20px; }
 
 #order-info a {
   position: absolute;
@@ -248,15 +273,34 @@ em {
       top: 0;
       width: 550px;
       height: 630px; }
-      .cont1_box .cont1 .left a:first-child {
-        display: block; }
-        .cont1_box .cont1 .left a:first-child > img {
+      .cont1_box .cont1 .left .large {
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        z-index: 10;
+        left: 100%;
+        top: -8%;
+        display: none; }
+      .cont1_box .cont1 .left a:nth-of-type(1) {
+        display: block;
+        border: 1px solid #dbdbdb;
+        position: relative; }
+        .cont1_box .cont1 .left a:nth-of-type(1) > img {
           width: 550px;
           height: 550px; }
-      .cont1_box .cont1 .left a:last-child {
+        .cont1_box .cont1 .left a:nth-of-type(1) .move {
+          background: url(../images/oneplus6/T12pdtXaldXXXXXXXX-2-2.png);
+          width: 330px;
+          height: 330px;
+          position: absolute;
+          top: 0;
+          left: 0;
+          cursor: move;
+          display: none; }
+      .cont1_box .cont1 .left a:nth-of-type(2) {
         display: block;
         text-align: center; }
-        .cont1_box .cont1 .left a:last-child > img {
+        .cont1_box .cont1 .left a:nth-of-type(2) > img {
           background: #fff;
           border: 1px solid #999;
           width: 70px;
@@ -455,7 +499,7 @@ em {
     .cont2_box .cont2 .buy-right {
       float: left;
       line-height: 60px;
-      margin-left: 100px; }
+      margin-left: 60px; }
       .cont2_box .cont2 .buy-right .goods-details {
         position: relative;
         display: inline-block; }
@@ -490,10 +534,11 @@ em {
         display: inline-block;
         background: #eb0028;
         color: #fff;
-        width: 118px;
+        width: 100px;
         height: 40px;
         text-align: center;
-        line-height: 40px; }
+        line-height: 40px;
+        cursor: pointer; }
         .cont2_box .cont2 .buy-right a:hover {
           background: #d70226; }
 

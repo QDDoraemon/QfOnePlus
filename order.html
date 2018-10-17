@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>登陆 | 一加账号</title>
+    <title>我的购物车</title>
     <link rel="shortcut icon" href="https://statics.oneplus.cn/img/oneplus.ico">
-    <script src='js/require.js' async="true" defer data-main='js/login_main'></script>
+    <script src='js/require.js' async="true" defer data-main='js/order_main'></script>
     <script src="iconfont/iconfont.js"></script>
-    <link rel="stylesheet" href="css/login.min.css">
+    <link rel="stylesheet" href="css/order.min.css">
     <style type="text/css">
         .icon {
             width: 2em;
@@ -47,6 +47,7 @@
             </a>
             <div id="order-info">
                 <p>您的购物车里没有商品！</p>
+                <ul></ul>
                 <a href="">去购物
                     <div id="shelter1"></div>
                 </a>
@@ -70,47 +71,48 @@
     <!-- cont -->
     <div class="cont_box">
         <div class="cont">
-            <h5>登陆</h5>
-            <form action="">
-                <input type="text" placeholder="手机/邮箱/用户名" id="phone">
-                <span id="phoneSpan"></span>
-                <input type="password" placeholder="密码" id="password">
-                <span id="pwdSpan"></span>
-                <div class="slide">请按住滑块，拖动到最右边
-                    <i></i>
-                    <span>>>
-                    </span>
-                </div>
-                <button id="login" type="button">确定
-                    <div id="shelter2"></div>
-                </button>
-            </form>
-            <fieldset>
-                <legend>选择其他登录方式</legend>
-            </fieldset>
-            <p>
-                <a href="">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-weibo"></use>
-                    </svg>
-                </a>
-                <a href="">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-qq"></use>
-                    </svg>
-                </a>
-                <a href="">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-weixin"></use>
-                    </svg>
-                </a>
-            </p>
-            <div>
-                <a href="register.html">注册</a>
-                <span>|</span>
-                <a href="">忘记密码</a>
+            <div class="head">
+                <span>购物车</span>
+                <span>填写订单</span>
+                <span>完成支付</span>
             </div>
-            <div class="success">登陆成功✔</div>
+            <ul class="black">
+                <li>商品</li>
+                <li>价格</li>
+                <li>数量</li>
+                <li>小计</li>
+                <li>操作</li>
+            </ul>
+            <div class="details">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-save_sorry"></use>
+                </svg>
+                <p>您的购物车里没有商品！</p>
+                <button>去购物
+                    <div id="shelter2"></div>
+                    <ul>
+                        <!-- <li>
+                            <img src="${res[0][cookie_arr[i].id].small}" alt="">
+                            <span>${res[0][cookie_arr[i].id].title}</span>
+                            <span>${res[0][cookie_arr[i].id].price}</span>
+                            <span>
+                                <b>+</b>
+                                <i>${cookie_arr[i].num}</i>
+                                <b>-</b>
+                            </span>
+                            <span>9999元</span>
+                            <span>
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-chahao"></use>
+                                </svg>
+                            </span>
+                        </li>
+                    </ul> -->
+                </button>
+            </div>
+            <div>
+                
+            </div>
         </div>
     </div>
     <!-- footer1 -->

@@ -10,7 +10,8 @@ require.config({
 
 		//抛物线函数，不遵从AMD
 		"parabola": "parabola",
-		"register": "register"
+		"register": "register",
+		"database": "database"
 	},
 	//设置模块之间的依赖关系
 	shim: {
@@ -25,6 +26,7 @@ require.config({
 })
 
 
-require(['register'], function(register){
+require(['register',"database"], function(register,database){
 	register.main();
+	database.main();
 })

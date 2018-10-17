@@ -93,7 +93,6 @@ define(["parabola", "jquery", "jquery-cookie"], function (parabola, $) {
 
                     function autoPlay() {
                         timer = setInterval(function () {
-                            document.title = index;
                             index++;
                             if (index > 2) {
                                 index = 0

@@ -47,6 +47,7 @@ define(["parabola", "jquery", "jquery-cookie"], function (parabola, $) {
                         width: $("form .slide span").position().left
                     })
                     if ($("form .slide span").position().left >= 265 || $("form .slide span").position().left <= 0) {
+                        $("form .slide span").css("left", "265");
                         $(document).off('mousemove');
                     }
                 })
@@ -78,6 +79,40 @@ define(["parabola", "jquery", "jquery-cookie"], function (parabola, $) {
                     opacity: 0
                 }, "linear");
             });
+            /* 表单验证 */
+            $("#phone").blur(function () {
+                var oValue = $(this).val();
+                if (oValue.length == 0) {
+                    $("#phoneSpan").html("请输入手机号");
+                    $(this).css("border", "1px solid red");
+                } else if (!(oValue.length == 11)) {
+                    $("#phoneSpan").html("长度应为十一位数字");
+                    $(this).css("border", "1px solid red");
+                } else {
+                    if (/^[1-3]{1}\d{10}$/.test(oValue)) {
+                        $(this).css("border", "1px solid #000");
+                        $('#phoneSpan').html('');
+                    }
+                }
+            })
+            $("#password").blur(function () {
+                var oValue = $(this).val();
+                if (oValue.length == 0) {
+                    $('#pwdSpan').html("请输入密码").css({
+                        color: 'red'
+                    });
+                    $(this).css("border", "1px solid red");
+                } else if (!(oValue.length >= 6 && oValue.length <= 16)) {
+                    $(this).css("border", "1px solid #000");
+                    $('#pwdSpan').html('密码长度为6-16位');
+                } else if (/\W+/.test(oValue)) {
+                    $(this).css("border", "1px solid #000");
+                    $('#pwdSpan').html("密码由数字、字母、下划线组成")
+                } else if (/^\w{6,16}$/.test(oValue)) {
+                    $('#pwdSpan').html('');
+                    $(this).css("border", "1px solid #000");
+                }
+            })
             /* footer2进度条 */
             $(".online").mouseenter(function () {
                 $(this).css("color", "#fff");
