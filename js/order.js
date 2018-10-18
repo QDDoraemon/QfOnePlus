@@ -82,15 +82,6 @@ define(["parabola", "jquery", "jquery-cookie"], function (parabola, $) {
 
         goods_details();
 
-
-
-
-
-
-
-
-
-
         function goods_details() {
             $.ajax({
                 url: 'json/oneplus6.json',
@@ -106,14 +97,14 @@ define(["parabola", "jquery", "jquery-cookie"], function (parabola, $) {
                             <li>
                                 <img src="${res[0][cookie_arr[i].id].small}" alt="">
                                 <span>${res[0][cookie_arr[i].id].title}</span>
-                                <span>${res[0][cookie_arr[i].id].price}</span>
+                                <span class='price'>${res[0][cookie_arr[i].id].price}</span>
                                 <span>
                                     <b>-</b>
                                     <i>${cookie_arr[i].num}</i>
                                     <b>+</b>
                                 </span>
-                                <span>￥${parseFloat(res[0][cookie_arr[i].id].price.substring(1) * (cookie_arr[i].num))}.00</span>
-                                <span>
+                                <span class="total">￥${parseFloat(res[0][cookie_arr[i].id].price.substring(1) * (cookie_arr[i].num))}.00</span>
+                                <span class="remove">
                                     <svg class="icon" aria-hidden="true">
                                         <use xlink:href="#icon-chahao"></use>
                                     </svg>
@@ -123,13 +114,55 @@ define(["parabola", "jquery", "jquery-cookie"], function (parabola, $) {
                             $(".details ul").html(html);
                         }
                     }
+                    /* 删除商品 */
+                    $('.remove').click(function(){
+                        var arr = eval($.cookie('goods'));
+                        var index = $(this).closest('li').index();
+                        arr.splice(index,1);
+                        $.cookie('goods',JSON.stringify(arr),{expires:7,raw:true});
+                        // $(this).closest('li').remove();
+                        location.reload();
+                    })
+                    /* 计算总价 */
+                    $('.pay').show();
+                    var min = 2;
+                    var sum_total = 0;
+                    for (var i = 0; i < $('.details li:last-child()').index() + 1; i++) {
+                        sum_total += parseFloat($('.details ul li').eq(i).find('.total').html().substring(1));
+                    }
+                    $('.pay .sum-total').html(`￥${sum_total}.00`);
+
+                    $('.details ul li span b:even').click(function () {
+                        if (parseInt($(this).siblings('i').html()) < min) {
+                            $(this).siblings('i').html(min);
+                        }
+                        $(this).siblings('i').html(parseInt($(this).siblings('i').html()) - 1);
+                        var total = `￥${parseInt($(this).siblings('i').html()) * parseFloat($(this).closest('span').siblings(".price").html().substring(1))}.00`;
+                        $(this).closest("span").siblings('.total').html(total);
+                        var sum_total = 0;
+                        for (var i = 0; i < $('.details li:last-child()').index() + 1; i++) {
+                            sum_total += parseFloat($('.details ul li').eq(i).find('.total').html().substring(1));
+                        }
+                        $('.pay .sum-total').html(`￥${sum_total}.00`);
+                    })
+
+                    $('.details ul li span b:odd').click(function () {
+                        $(this).siblings('i').html(parseInt($(this).siblings('i').html()) + 1);
+                        var total = `￥${parseInt($(this).siblings('i').html()) * parseFloat($(this).closest('span').siblings(".price").html().substring(1))}.00`;
+                        $(this).closest("span").siblings('.total').html(total);
+                        var sum_total = 0;
+                        for (var i = 0; i < $('.details li:last-child()').index() + 1; i++) {
+                            sum_total += parseFloat($('.details ul li').eq(i).find('.total').html().substring(1));
+                        }
+                        $('.pay .sum-total').html(`￥${sum_total}.00`);
+                    })
                 },
                 error: function (msg) {
                     alert(msg);
                 }
             })
         }
-
+        /* 购物车 */
         function car_msg() {
             $.ajax({
                 url: 'json/oneplus6.json',

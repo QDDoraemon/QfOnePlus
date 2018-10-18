@@ -23,7 +23,12 @@ define(["parabola", "jquery", "jquery-cookie"], function (parabola, $) {
             }).mouseleave(function () {
                 $("#order-info").css("display", 'none');
             })
-
+            /* 登出账号 */
+            if ($.cookie('user')) {
+                $('#login').click(function () {
+                    $.cookie('user','');
+                })
+            }
             /* 购物车进度条 */
             $('#order-info').find("a").mouseenter(function () {
                 $("#shelter1").stop().animate({

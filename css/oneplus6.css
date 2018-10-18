@@ -283,7 +283,6 @@ em {
         display: none; }
       .cont1_box .cont1 .left a:nth-of-type(1) {
         display: block;
-        border: 1px solid #dbdbdb;
         position: relative; }
         .cont1_box .cont1 .left a:nth-of-type(1) > img {
           width: 550px;

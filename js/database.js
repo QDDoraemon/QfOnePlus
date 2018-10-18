@@ -16,8 +16,12 @@ define(["parabola", "jquery", "jquery-cookie"], function (parabola, $) {
                             setTimeout(function () {
                                 location.assign("oneplus6.html");
                             }, 1000);
+                            $.cookie('user', `[{user:${$("#phone").val()},password:${$("#password").val()}}]`, {
+                                expires: 7,
+                                raw: true
+                            });
+                            $('#login').html(`登出${$("#phone").val()}`);
 
-                            
                         } else if (data == "密码错误") {
                             alert("密码错误");
                         }
