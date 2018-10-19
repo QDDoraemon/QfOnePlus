@@ -23,11 +23,16 @@ define(["parabola", "jquery", "jquery-cookie"], function (parabola, $) {
             }).mouseleave(function () {
                 $("#order-info").css("display", 'none');
             })
-            /* 登出账号 */
+            /* 登陆登出账号 */
+
             if ($.cookie('user')) {
+                var arr = eval($.cookie('user'))
+                $('#login').html(`登出${arr[0].user}`);
                 $('#login').click(function () {
-                    $.cookie('user','');
+                    $.cookie('user', '');
+                    $('#login').attr('href','');
                 })
+                $('#login').attr('href','login.html');
             }
             /* 购物车进度条 */
             $('#order-info').find("a").mouseenter(function () {

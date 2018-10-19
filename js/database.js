@@ -20,8 +20,6 @@ define(["parabola", "jquery", "jquery-cookie"], function (parabola, $) {
                                 expires: 7,
                                 raw: true
                             });
-                            $('#login').html(`登出${$("#phone").val()}`);
-
                         } else if (data == "密码错误") {
                             alert("密码错误");
                         }
